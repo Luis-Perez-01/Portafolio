@@ -2,6 +2,7 @@ import { Github, Linkedin } from "lucide-react";
 import Lottie from "lottie-react";
 import dataLottie from "../../public/assets/bg-lottie.json";
 import Projects from "./Projects";
+import AboutMe from "./AboutMe";
 
 export default function HomePage() {
   return (
@@ -17,7 +18,9 @@ export default function HomePage() {
           <p className="text-4xl font-semibold drop-shadow">
             Hola, mi nombre es <span className="text-blue-600">Luis</span> 👋
           </p>
-          <p className="p-0.5 drop-shadow">Soy programador Fullstack, principalmente sitios web</p>
+          <p className="p-0.5 drop-shadow">
+            Soy programador Fullstack, principalmente sitios web
+          </p>
           <p className="inline bg-gray-200/60 dark:bg-gray-800 p-0.5 drop-shadow">
             Pasión por aprender y motivación para crecer
           </p>
@@ -54,7 +57,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <Projects/>
+      <Projects />
+      <AboutMe />
     </>
   );
 }
