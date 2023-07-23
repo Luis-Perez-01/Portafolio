@@ -5,7 +5,7 @@ export default function Projects() {
       <section className="grid grid-cols-1 md:grid-cols-4 items-center dark:bg-slate-900/50 rounded-lg p-6 m-10 gap-2">
         <div className="max-w-[19.13rem] mx-auto">
           <div className="overflow-hidden rounded-t-lg">
-            <a href="">
+            <a href="https://ecommerce-a16.vercel.app/">
               <img
                 className="w-[19.13rem] h-full object-cover hover:scale-105 duration-300"
                 src="/assets/Ecommerce.png"
