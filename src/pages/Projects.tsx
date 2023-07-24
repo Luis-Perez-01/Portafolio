@@ -64,7 +64,7 @@ export default function Projects() {
             <a href="https://tic-tac-toe-kappa-coral.vercel.app" target="_blank">
               <img
                 className="w-[19.13rem] h-full object-cover hover:scale-105 duration-300"
-                src="/assets/Newsletter.png"
+                src="/assets/tic-tac-toe.png"
                 alt="Newsletter"
               />
             </a>
