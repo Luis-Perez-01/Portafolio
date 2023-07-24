@@ -5,7 +5,7 @@ export default function AboutMe() {
         <article className="leading-8 text-justify md:max-w-[30vw] p-6">
           <h1 className="text-2xl font-bold">Sobre mí</h1>
           <p>
-            Actualmente soy recién egresado en Ingeniería de Desarrollo y
+            Actualmente soy egresado en Ingeniería de Desarrollo y
             Gestión de Software, enfocándome principalmente en el desarrollo
             web. Además, cuento con experiencia en el área de redes y soporte,
             lo que ha enriquecido mis habilidades en diferentes aspectos de la

@@ -59,6 +59,20 @@ export default function Projects() {
             Prosesa Comercializadora
           </div>
         </div>
+        <div className="max-w-[19.13rem] mx-auto">
+          <div className="overflow-hidden  rounded-t-lg">
+            <a href="" target="_blank">
+              <img
+                className="w-[19.13rem] h-full object-cover hover:scale-105 duration-300"
+                src="/assets/Newsletter.png"
+                alt="Newsletter"
+              />
+            </a>
+          </div>
+          <div className="text-center font-semibold bg-gray-200 dark:bg-gray-800 rounded-b-lg px-3 py-2">
+            Newsletter
+          </div>
+        </div>
       </section>
     </>
   );
