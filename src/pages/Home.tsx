@@ -15,15 +15,16 @@ export default function HomePage() {
           autoPlay
         />
         <div className="text-center leading-10 mx-10 md:mx-0 md:mr-10">
+          <p className="text-sm drop-shadow">
+            Programador Fullstack
+          </p>
           <p className="text-4xl font-semibold drop-shadow">
             Hola, mi nombre es <span className="text-blue-600">Luis</span> 👋
           </p>
-          <p className="p-0.5 drop-shadow">
-            Soy programador Frontend
-          </p>
           <p className="inline bg-gray-200/60 dark:bg-gray-800 p-0.5 drop-shadow">
-            Pasión por aprender y motivación para crecer
+            Pasión por aprender y motivación para crecer.
           </p>
+
           <div className="flex justify-center my-2 gap-2">
             <a
               className="rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-700 hover:ring-2 hover:scale-105 px-3 py-2 drop-shadow"
