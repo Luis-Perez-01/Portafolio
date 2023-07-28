@@ -19,7 +19,7 @@ export default function HomePage() {
             Hola, mi nombre es <span className="text-blue-600">Luis</span> 👋
           </p>
           <p className="p-0.5 drop-shadow">
-            Soy programador Fullstack, principalmente sitios web
+            Soy programador Frontend
           </p>
           <p className="inline bg-gray-200/60 dark:bg-gray-800 p-0.5 drop-shadow">
             Pasión por aprender y motivación para crecer

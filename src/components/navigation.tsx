@@ -21,7 +21,7 @@ export default function Navigation({
   }
 
   return (
-    <nav className="bg-white dark:border-b dark:border-gray-800 drop-shadow-sm dark:text-white dark:bg-gray-900">
+    <nav className="bg-white/70 dark:border-b dark:border-gray-800 drop-shadow-sm dark:text-white dark:bg-gray-900/90 sticky top-0 z-10 backdrop-blur-md">
       <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
         <NavLink className="flex items-center " to="/">
           <img src="/assets/me.jpg" className="w-10 h-10 rounded-full mr-2" />
@@ -38,7 +38,7 @@ export default function Navigation({
           <Menu />
         </button>
         <div className={`w-full md:block md:w-auto ${toogleMenu}`}>
-          <ul className="font-medium flex flex-col p-4 md:p-0 mt-8 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <ul className="font-medium flex flex-col p-4 md:p-0 mt-8 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:border-0   dark:border-gray-700">
             <li>
               <NavLink
                 className={({ isActive, isPending }) =>

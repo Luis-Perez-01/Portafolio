@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/Home";
 import NotFoundPage from "./pages/NotFoundPage";
 import Navigation from "./components/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Projects from "./pages/Projects";
 import AboutMe from "./pages/AboutMe";
 
@@ -10,6 +10,10 @@ function App() {
   const [theme, setTheme] = useState<boolean>(false);
 
   const darkTheme = theme === true ? "dark" : "";
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <html className={darkTheme}>

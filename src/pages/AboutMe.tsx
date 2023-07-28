@@ -1,24 +1,25 @@
+import { useEffect } from "react";
+
 export default function AboutMe() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <section className="max-w-screen-xl flex flex-col md:flex-row justify-center items-center my-16 mx-10 lg:mx-auto bg-gray-100 dark:bg-gray-900 rounded-lg animate-fade-up">
-        <article className="leading-8 text-justify md:max-w-[30vw] p-6">
+        <article className="leading-8 md:max-w-[30vw] p-6">
           <h1 className="text-2xl font-bold">Sobre mí</h1>
           <p>
-            Actualmente soy egresado en Ingeniería de Desarrollo y
-            Gestión de Software, enfocándome principalmente en el desarrollo
-            web. Además, cuento con experiencia en el área de redes y soporte,
-            lo que ha enriquecido mis habilidades en diferentes aspectos de la
-            informática. Siempre me ha gustado investigar por mi cuenta y
-            aprender sobre estos temas. Me considero una persona con mucha
-            facilidad para aprender y responsable en mi trabajo. Estoy motivado
-            para seguir creciendo profesionalmente y colaborar con otros en
-            proyectos y desafíos del mundo digital.
+            Egresado en Ingeniería de Desarrollo y Gestión de Software,
+            enfocado en desarrollo web aunque también con experiencia en redes y soporte.
+            Apasionado por aprender y comprometido con crecer profesionalmente
+            en proyectos digitales.
           </p>
         </article>
         <figure className="w-full">
           <img
-            className="mx-auto hover:animate-jump"
+            className="h-32 mx-auto"
             src="/assets/Logo.png"
             alt="Logo"
           />
