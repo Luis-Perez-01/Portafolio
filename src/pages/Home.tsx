@@ -9,7 +9,7 @@ export default function HomePage() {
     <>
       <section className="w-full flex flex-col justify-center gap-8 bg-gray-100 dark:bg-gray-950 md:flex-row items-center md:mx-auto py-24 animate-fade-up">
         <Lottie
-          className="absolute max-w-[25rem] md:left-[35%] -z-10"
+          className="absolute max-w-[25rem] md:left-[34%] -z-10"
           animationData={dataLottie}
           loop
           autoPlay
