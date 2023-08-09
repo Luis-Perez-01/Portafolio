@@ -15,7 +15,7 @@ export default function HomePage() {
           autoPlay
         />
         <div className="text-center leading-10 mx-10 md:mx-0 md:mr-10">
-          <p className="text-sm drop-shadow">Programador Fullstack</p>
+          <p className="text-sm drop-shadow">Desarrollador web</p>
           <p className="text-4xl font-semibold drop-shadow">
             Hola, mi nombre es <span className="text-blue-600">Luis</span> 👋
           </p>
