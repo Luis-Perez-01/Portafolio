@@ -26,7 +26,7 @@ export default function HomePage() {
           <div className="flex justify-center my-2 gap-2">
             <a
               className="rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-700 hover:ring-2 hover:scale-105 px-3 py-2 drop-shadow"
-              href="https://www.linkedin.com/in/luis-miguel-p%C3%A9rez-padr%C3%B3n-05a395177/"
+              href="www.linkedin.com/in/luis-miguel-pérez-padrón-016aa3288"
               target="_blank"
             >
               <Linkedin />
