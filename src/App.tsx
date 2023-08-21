@@ -10,7 +10,7 @@ function App() {
   const [theme, setTheme] = useState<boolean>(false);
 
   const darkTheme = theme === true ? "dark" : "";
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -27,10 +27,16 @@ function App() {
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
           <footer className="absolute bottom-0 w-full text-center mx-auto py-8 border-t border-gray-100 dark:bg-gray-900 dark:border-t dark:border-gray-800">
+            <p>&lt;Luis Dev/&gt;</p>
             <p>
-               &lt;Luis Dev/&gt;
+              Contáctame en{" "}
+              <a
+                className="text-blue-700 hover:underline"
+                href="mailto:LuisM1P3@hotmail.com"
+              >
+                LuisM1P3@hotmail.com
+              </a>
             </p>
-            <p>Contáctame en <a className="text-blue-700 hover:underline" href="mailto:LuisM1P3@hotmail.com">LuisM1P3@hotmail.com</a></p>
           </footer>
         </BrowserRouter>
       </body>

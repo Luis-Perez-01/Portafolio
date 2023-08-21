@@ -28,7 +28,7 @@ export default function Navigation({
           <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white hover:text-blue-700 dark:hover:text-blue-700">
             Luis Pérez
           </span>
-          <BadgeCheck className="text-blue-700 ml-1"/>
+          <BadgeCheck className="text-blue-700 ml-1" />
         </NavLink>
 
         <button
@@ -81,7 +81,7 @@ export default function Navigation({
                 Acerca de mí
               </NavLink>
             </li>
-           
+
             <li>
               <label className="relative inline-flex float-right items-center cursor-pointer">
                 <input
