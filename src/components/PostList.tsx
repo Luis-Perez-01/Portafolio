@@ -23,7 +23,7 @@ export default function PostList({ posts }: { posts: Post[] }) {
           >
             <figure className="overflow-hidden">
               <img
-                className="aspect-video bg-cover bg-white transform ease-in-out group-hover:scale-[1.05] duration-500"
+                className="aspect-video bg-cover bg-center bg-white transform ease-in-out group-hover:scale-[1.05] duration-500"
                 src={post.file}
                 alt={post.title}
               />
