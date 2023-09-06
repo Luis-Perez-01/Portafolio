@@ -6,16 +6,14 @@ export default function Projects() {
   }, []);
 
   return (
-    <>
-      <h1 className="max-w-screen-xl lg:mx-auto m-10 text-2xl font-bold my-10">
-        Mis proyectos
-      </h1>
-      <section className="max-w-screen-xl lg:mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center bg-gray-100 dark:bg-slate-900/50 rounded-lg p-6 m-10 gap-20 animate-fade-down">
+    <article className="max-w-screen-lg bg-gray-100 dark:bg-gray-900 rounded-lg animate-fade-down w-[90%] p-6 mt-10 mx-auto">
+      <h1 className="text-2xl font-bold pb-4">Mis proyectos</h1>
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-10">
         <div className="max-w-[19.13rem] mx-auto">
           <div className="overflow-hidden rounded-t-lg">
             <a href="https://ecommerce-a16.vercel.app/" target="_blank">
               <img
-                className="max-w-[19.13rem] max-h-[38.5rem] object-cover hover:scale-105 duration-300"
+                className="w-full max-h-[38.5rem] object-cover hover:scale-105 duration-300"
                 src="/assets/Ecommerce.png"
                 alt="Ecommerce"
               />
@@ -29,7 +27,7 @@ export default function Projects() {
           <div className="overflow-hidden rounded-t-lg">
             <a href="">
               <img
-                className="max-w-[19.13rem] max-h-[38.5rem] object-cover hover:scale-105 duration-300"
+                className="w-full max-h-[38.5rem] object-cover hover:scale-105 duration-300"
                 src="/assets/AppMovie.png"
                 alt="App movies"
               />
@@ -43,7 +41,7 @@ export default function Projects() {
           <div className="overflow-hidden  rounded-t-lg">
             <a href="https://frugo.com.mx/es/" target="_blank">
               <img
-                className="max-w-[19.13rem] max-h-[38.5rem] object-cover scale-105 hover:scale-110 duration-300"
+                className="w-full max-h-[38.5rem] object-cover scale-105 hover:scale-110 duration-300"
                 src="/assets/Frugo.png"
                 alt="Productos Frugo página web"
               />
@@ -57,7 +55,7 @@ export default function Projects() {
           <div className="overflow-hidden  rounded-t-lg">
             <a href="https://prosesacomercializadora.com.mx/" target="_blank">
               <img
-                className="max-w-[19.13rem] max-h-[38.5rem] object-cover hover:scale-105 duration-300"
+                className="w-full max-h-[38.5rem] object-cover hover:scale-105 duration-300"
                 src="/assets/Prosesa.png"
                 alt="Ecommerce"
               />
@@ -74,7 +72,7 @@ export default function Projects() {
               target="_blank"
             >
               <img
-                className="max-w-[19.13rem] max-h-[38.5rem] object-cover hover:scale-105 duration-300"
+                className="w-full max-h-[38.5rem] object-cover hover:scale-105 duration-300"
                 src="/assets/tic-tac-toe.png"
                 alt="Newsletter"
               />
@@ -88,7 +86,7 @@ export default function Projects() {
           <div className="overflow-hidden  rounded-t-lg">
             <a href="https://newsletter-three-neon.vercel.app" target="_blank">
               <img
-                className="max-w-[19.13rem] max-h-[38.5rem] object-cover hover:scale-105 duration-300"
+                className="w-full max-h-[38.5rem] object-cover hover:scale-105 duration-300"
                 src="/assets/Newsletter.png"
                 alt="Newsletter"
               />
@@ -102,7 +100,7 @@ export default function Projects() {
           <div className="overflow-hidden  rounded-t-lg">
             <a href="https://to-do-ecru-seven.vercel.app/" target="_blank">
               <img
-                className="max-w-[18rem] h-[38.5rem] object-cover hover:scale-105 duration-300"
+                className="w-full h-[38.5rem] object-cover hover:scale-105 duration-300"
                 src="/assets/ToDo.png"
                 alt="To Do App"
               />
@@ -113,6 +111,6 @@ export default function Projects() {
           </div>
         </div>
       </section>
-    </>
+    </article>
   );
 }

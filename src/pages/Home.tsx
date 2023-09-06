@@ -1,20 +1,20 @@
 import { Github, Linkedin } from "lucide-react";
 import Lottie from "lottie-react";
-import dataLottie from "../../public/assets/bg-lottie.json";
+import dataLottie from "../assets/bg-lottie.json";
 import Projects from "./Projects";
 import AboutMe from "./AboutMe";
 
 export default function HomePage() {
   return (
     <>
-      <section className="w-full flex flex-col justify-center gap-8 bg-gray-100 dark:bg-gray-950 md:flex-row items-center md:mx-auto py-24 animate-fade-up">
-        <Lottie
-          className="absolute max-w-[25rem] md:left-[34%] -z-10"
-          animationData={dataLottie}
-          loop
-          autoPlay
-        />
-        <div className="text-center leading-10 mx-10 md:mx-0 md:mr-10">
+      <section className="flex flex-col md:flex-row justify-center items-center bg-gray-100 dark:bg-gray-950 animate-fade-up w-full md:mx-auto gap-8 py-24">
+        <div className="relative text-center leading-10 mx-10 md:mx-0 md:mr-10">
+          <Lottie
+            className="absolute left-0 right-0 -top-10 w-[60%] mx-auto -z-10"
+            animationData={dataLottie}
+            loop
+            autoPlay
+          />
           <p className="text-sm drop-shadow">Desarrollador web</p>
           <p className="text-4xl font-semibold drop-shadow">
             Hola, mi nombre es <span className="text-blue-600">Luis</span> 👋
