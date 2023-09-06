@@ -6,9 +6,9 @@ export default function Projects() {
   }, []);
 
   return (
-    <article className="max-w-screen-lg bg-gray-100 dark:bg-gray-900 rounded-lg animate-fade-down w-[90%] p-6 mt-10 mx-auto">
+    <article className="max-w-screen-lg w-full animate-fade-down p-6 mt-10 mx-auto">
       <h1 className="text-2xl font-bold pb-4">Mis proyectos</h1>
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-10">
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center bg-gray-100 dark:bg-gray-900 rounded-lg p-6 gap-10">
         <div className="max-w-[19.13rem] mx-auto">
           <div className="overflow-hidden rounded-t-lg">
             <a href="https://ecommerce-a16.vercel.app/" target="_blank">

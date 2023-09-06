@@ -6,8 +6,8 @@ export default function AboutMe() {
   }, []);
 
   return (
-    <div className="max-w-screen-lg mx-auto space-y-10 my-10 ">
-      <section className="flex flex-col md:flex-row justify-center items-center lg:mx-auto bg-gray-100 dark:bg-gray-900 rounded-lg animate-fade-up">
+    <div className="max-w-screen-lg space-y-10 w-full mx-auto p-6 my-10">
+      <section className="flex flex-col md:flex-row justify-center items-center bg-gray-100 dark:bg-gray-900 rounded-lg animate-fade-up">
         <article className="leading-8 p-6">
           <h1 className="text-2xl font-bold pb-3">Sobre mí</h1>
           <p>
