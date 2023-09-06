@@ -12,7 +12,7 @@ export default function Blog() {
 
   return (
     <div className="max-w-screen-lg my-10 mx-auto animate-fade-down">
-      <div className="flex justify-between items-center">
+      <div className="max-w-screen-lg flex justify-between items-center mb-10">
         <h1 className="font-semibold text-2xl">Últimos artículos</h1>
         <Link
           to="/blog/create"
