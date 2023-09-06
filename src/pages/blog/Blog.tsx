@@ -1,12 +1,10 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import api from "../../api";
 import PostList from "../../components/PostList";
 import { Link } from "react-router-dom";
-import { UserContext } from "../../context/UserContext";
 
 export default function Blog() {
   const [posts, setPosts] = useState<any>([]);
-  const { id } = useContext(UserContext);
 
   useEffect(() => {
     api.posts.getAll.fetch().then((data) => setPosts(data));
