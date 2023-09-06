@@ -16,16 +16,12 @@ export default function Blog() {
     <div className="max-w-screen-lg my-10 mx-auto animate-fade-down">
       <div className="flex justify-between items-center">
         <h1 className="font-semibold text-2xl">Últimos artículos</h1>
-        {id ? (
-          <Link
-            to="/blog/create"
-            className="rounded-lg text-white text-sm font-semibold bg-blue-700 hover:bg-blue-600 hover:scale-105 tranform ease-in-out duration-75 px-3 py-2 drop-shadow"
-          >
-            Crear artículo
-          </Link>
-        ) : (
-          ""
-        )}
+        <Link
+          to="/blog/create"
+          className="rounded-lg text-white text-sm font-semibold bg-blue-700 hover:bg-blue-600 hover:scale-105 tranform ease-in-out duration-75 px-3 py-2 drop-shadow"
+        >
+          Crear artículo
+        </Link>
       </div>
       <PostList posts={posts} />
     </div>
