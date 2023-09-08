@@ -6,7 +6,6 @@ import { postSchema } from "../schemas/post.schema";
 import { useState } from "react";
 import api from "../api";
 import { toast } from "sonner";
-import { json } from "react-router-dom";
 
 const modules = {
   toolbar: [
