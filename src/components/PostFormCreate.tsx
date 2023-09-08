@@ -6,6 +6,7 @@ import { postSchema } from "../schemas/post.schema";
 import { useState } from "react";
 import api from "../api";
 import { toast } from "sonner";
+import slug from "slug";
 
 const modules = {
   toolbar: [
@@ -61,6 +62,7 @@ export default function PostFormCreate() {
 
       const formData = new FormData();
       formData.append("title", title);
+      formData.append("slug", slug(title));
       formData.append("description", description);
       formData.append("file", file[0]);
       formData.append("content", content);
