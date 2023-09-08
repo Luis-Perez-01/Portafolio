@@ -19,6 +19,7 @@ export default function Post() {
 
   useEffect(() => {
     api.posts.getOne.fetch(id).then((data) => setPost(data));
+    window.scrollTo(0, 0);
   }, []);
 
   return (

@@ -6,6 +6,7 @@ import { postSchema } from "../schemas/post.schema";
 import { useState } from "react";
 import api from "../api";
 import { toast } from "sonner";
+import { json } from "react-router-dom";
 
 const modules = {
   toolbar: [
@@ -71,8 +72,8 @@ export default function PostFormCreate() {
       } else {
         toast.success("Post creado correctamente");
       }
-    } catch (error) {
-      toast.error("Error al crear el usuario");
+    } catch (error: any) {
+      toast.error(`Error al crear el post: ${error.message}`);
     }
     setIsLoading(false);
   };

@@ -69,7 +69,6 @@ const api = {
             credentials: "include",
             body: FormData,
             headers: {
-              "Content-Type": "multipart/form-data",
               "x-access-token": localStorage.getItem("token")!,
             },
           }

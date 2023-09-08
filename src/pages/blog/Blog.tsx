@@ -8,6 +8,7 @@ export default function Blog() {
 
   useEffect(() => {
     api.posts.getAll.fetch().then((data) => setPosts(data));
+    window.scrollTo(0, 0);
   }, []);
 
   return (
