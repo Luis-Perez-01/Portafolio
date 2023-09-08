@@ -25,20 +25,20 @@ function App() {
             <Navigation />
             <Login />
             <Register />
+            <Layout>
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/projects" element={<Projects />} />
+                <Route path="/about" element={<AboutMe />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:id" element={<Post />} />
+                <Route path="/blog/create" element={<CreatePost />} />
+                <Route path="*" element={<NotFoundPage />} />
+              </Routes>
+              <Footer />
+              <Toaster />
+            </Layout>
           </ModalContextProvider>
-          <Layout>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/about" element={<AboutMe />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:id" element={<Post />} />
-              <Route path="/blog/create" element={<CreatePost />} />
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-            <Footer />
-            <Toaster />
-          </Layout>
         </BrowserRouter>
       </UserContextProvider>
     </ThemeProvider>
