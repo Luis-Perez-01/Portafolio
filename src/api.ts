@@ -68,6 +68,10 @@ const api = {
             method: "POST",
             credentials: "include",
             body: FormData,
+            headers: {
+              "Content-Type": "multipart/form-data",
+              "x-access-token": localStorage.getItem("token")!,
+            },
           }
         ).then((res) => res.json());
         return response;
