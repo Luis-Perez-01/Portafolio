@@ -1,12 +1,16 @@
 {
-    "rewrites": [
+    "redirects": [
         {
             "destination": "/index.html",
-            "source": [
-                "/about",
-                "/projects",
-                "/blog/(.*)"
-            ]
+            "source": "/blog/(.*)"
+        },
+        {
+            "destination": "/index.html",
+            "source": "/projects"
+        },
+        {
+            "destination": "/index.html",
+            "source": "/about"
         },
         {
             "destination": "/404.html",
