@@ -4,6 +4,7 @@ export interface Post {
   description: string;
   content: string;
   file: string;
+  slug?: string;
   createdAt: Date;
   updatedAt: Date;
 }

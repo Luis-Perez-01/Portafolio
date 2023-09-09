@@ -16,11 +16,11 @@ export default function PostList({ posts }: { posts: Post[] }) {
   return (
     <div className="grid md:grid-cols-2 mx-10 gap-10">
       {orderPosts.map((post) => (
-        <Link to={`/blog/${post._id}`} key={post._id}>
+        <Link to={`/blog/${post.slug}`} key={post._id}>
           <div className="rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-900 group">
             <figure className="overflow-hidden">
               <img
-                className="aspect-video bg-cover bg-center bg-white transform ease-in-out group-hover:scale-[1.05] duration-500"
+                className="aspect-video object-center transform ease-in-out group-hover:scale-[1.05] duration-500"
                 src={post.file}
                 alt={post.title}
               />

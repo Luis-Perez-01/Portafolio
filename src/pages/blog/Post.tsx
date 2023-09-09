@@ -13,12 +13,12 @@ const formatDate = (dateString: Date) => {
 };
 
 export default function Post() {
-  const { id } = useParams();
+  const { slug } = useParams();
 
   const [post, setPost] = useState<any>([]);
 
   useEffect(() => {
-    api.posts.getOne.fetch(id).then((data) => setPost(data));
+    api.posts.getBySlug.fetch(slug).then((data) => setPost(data));
     window.scrollTo(0, 0);
   }, []);
 

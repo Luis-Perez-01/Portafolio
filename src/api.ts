@@ -48,10 +48,10 @@ const api = {
         return response;
       },
     },
-    getOne: {
-      fetch: async (id: string | undefined) => {
+    getBySlug: {
+      fetch: async (slug: string | undefined) => {
         const response = await fetch(
-          `https://portafolio-backend-ihwm-dev.fl0.io/api/posts/${id}`,
+          `https://portafolio-backend-ihwm-dev.fl0.io/api/posts/${slug}`,
           {
             method: "GET",
             credentials: "include",
