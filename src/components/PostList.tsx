@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Post } from "../../interfaces/Post.interface";
+import { Post } from "../interfaces/Post.interface";
 
 const formatDate = (dateString: Date) => {
   const date = new Date(dateString);
@@ -17,7 +17,7 @@ export default function PostList({ posts }: { posts: Post[] }) {
     <div className="grid md:grid-cols-2 mx-10 gap-10">
       {orderPosts.map((post) => (
         <Link to={`/blog/${post.slug}`} key={post._id}>
-          <div className="rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-900 group">
+          <div className="flex flex-col min-h-full rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-900 group">
             <figure className="overflow-hidden">
               <img
                 className="aspect-video object-center transform ease-in-out group-hover:scale-[1.05] duration-500"
@@ -25,14 +25,17 @@ export default function PostList({ posts }: { posts: Post[] }) {
                 alt={post.title}
               />
             </figure>
-            <div className="relative h-[13rem] space-y-2 p-6">
+
+            <div className="flex-1 space-y-2 px-6 pt-6 pb-2.5">
               <h1 className="uppercase font-semibold line-clamp-2">
                 {post.title}
               </h1>
               <p className="font-semibold text-neutral-700 dark:text-neutral-300 line-clamp-3">
                 {post.description}
               </p>
-              <span className="absolute bottom-[1.5rem] text-sm font-semibold text-neutral-700 dark:text-neutral-300">
+            </div>
+            <div className="flex-initial pb-6 px-6">
+              <span className="text-sm font-semibold text-neutral-700 dark:text-neutral-300">
                 {formatDate(post.createdAt)}
               </span>
             </div>

@@ -1,51 +1,22 @@
-export default function LoadingListPost() {
+export default function LoadingPost() {
   return (
-    <div className="grid md:grid-cols-2 mx-10 gap-10">
-      <div className="max-w-lg animate-pulse">
-        <div className="rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-900 group">
-          <figure className="overflow-hidden">
-            <div className="aspect-video object-center transform ease-in-out group-hover:scale-[1.05] duration-500 bg-gray-300 dark:bg-gray-700"></div>
-          </figure>
-          <div className="relative h-[13rem] space-y-2 p-6">
-            <div className="uppercase font-semibold line-clamp-2 bg-gray-300 dark:bg-gray-700"></div>
-            <div className="font-semibold text-neutral-700 dark:text-neutral-300 line-clamp-3 bg-gray-300 dark:bg-gray-700"></div>
-            <div className="absolute bottom-[1.5rem] text-sm font-semibold text-neutral-700 dark:text-neutral-300 bg-gray-300 dark:bg-gray-700"></div>
-          </div>
+    <div className="max-w-screen-lg min-w-screen-lg w-full my-10 mx-5 lg:mx-auto">
+      <div className="animate-pulse">
+        <div className="flex justify-between mb-10 mx-10 md:mx-auto">
+          <div className="w-16 h-4 bg-gray-300 dark:bg-gray-700"></div>
+          <div className="w-36 h-4 bg-gray-300 dark:bg-gray-700"></div>
         </div>
-      </div>
-      <div className="max-w-lg animate-pulse">
-        <div className="rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-900 group">
-          <figure className="overflow-hidden">
-            <div className="aspect-video object-center transform ease-in-out group-hover:scale-[1.05] duration-500 bg-gray-300 dark:bg-gray-700"></div>
-          </figure>
-          <div className="relative h-[13rem] space-y-2 p-6">
-            <div className="uppercase font-semibold line-clamp-2 bg-gray-300 dark:bg-gray-700"></div>
-            <div className="font-semibold text-neutral-700 dark:text-neutral-300 line-clamp-3 bg-gray-300 dark:bg-gray-700"></div>
-            <div className="absolute bottom-[1.5rem] text-sm font-semibold text-neutral-700 dark:text-neutral-300 bg-gray-300 dark:bg-gray-700"></div>
+        <div className="my-10 mx-10 md:mx-auto space-y-1">
+          <div className="w-full h-7 bg-gray-300 dark:bg-gray-700"></div>
+          <div className="w-3/4 h-7 bg-gray-300 dark:bg-gray-700"></div>
+          <div className="space-y-2 pt-8">
+            <div className="w-full h-5 bg-gray-300 dark:bg-gray-700"></div>
+            <div className="w-full h-5 bg-gray-300 dark:bg-gray-700"></div>
+            <div className="w-full h-5 bg-gray-300 dark:bg-gray-700"></div>
+            <div className="w-3/4 h-5 bg-gray-300 dark:bg-gray-700"></div>
           </div>
-        </div>
-      </div>
-      <div className="max-w-lg animate-pulse">
-        <div className="rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-900 group">
-          <figure className="overflow-hidden">
-            <div className="aspect-video object-center transform ease-in-out group-hover:scale-[1.05] duration-500 bg-gray-300 dark:bg-gray-700"></div>
-          </figure>
-          <div className="relative h-[13rem] space-y-2 p-6">
-            <div className="uppercase font-semibold line-clamp-2 bg-gray-300 dark:bg-gray-700"></div>
-            <div className="font-semibold text-neutral-700 dark:text-neutral-300 line-clamp-3 bg-gray-300 dark:bg-gray-700"></div>
-            <div className="absolute bottom-[1.5rem] text-sm font-semibold text-neutral-700 dark:text-neutral-300 bg-gray-300 dark:bg-gray-700"></div>
-          </div>
-        </div>
-      </div>
-      <div className="max-w-lg animate-pulse">
-        <div className="rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-900 group">
-          <figure className="overflow-hidden">
-            <div className="aspect-video object-center transform ease-in-out group-hover:scale-[1.05] duration-500 bg-gray-300 dark:bg-gray-700"></div>
-          </figure>
-          <div className="relative h-[13rem] space-y-2 p-6">
-            <div className="uppercase font-semibold line-clamp-2 bg-gray-300 dark:bg-gray-700"></div>
-            <div className="font-semibold text-neutral-700 dark:text-neutral-300 line-clamp-3 bg-gray-300 dark:bg-gray-700"></div>
-            <div className="absolute bottom-[1.5rem] text-sm font-semibold text-neutral-700 dark:text-neutral-300 bg-gray-300 dark:bg-gray-700"></div>
+          <div className="pt-8">
+            <div className="w-full h-[35rem] bg-gray-300 dark:bg-gray-700"></div>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import api from "../api";
-import { Post } from "../../interfaces/Post.interface";
+import { Post } from "../interfaces/Post.interface";
 
 interface PostsContextValue {
   posts: Post[];

@@ -125,7 +125,8 @@ export default function PostFormCreate() {
       {errors.file && (
         <span className="text-red-500">{errors.file.message?.toString()}</span>
       )}
-      <div>
+      <label htmlFor="content">Content</label>
+      <div className="bg-white text-black">
         <ReactQuill
           modules={modules}
           formats={formats}

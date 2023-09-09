@@ -3,7 +3,7 @@ import PostList from "../../components/PostList";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
 import { ModalContext } from "../../context/ModalContext";
-import LoadingListPost from "../../components/LoadingPost";
+import LoadingPostList from "../../components/LoadingPostList";
 import PostsContext from "../../context/PostsContext";
 
 export default function Blog() {
@@ -35,7 +35,7 @@ export default function Blog() {
           </button>
         )}
       </div>
-      {isLoading ? <LoadingListPost /> : <PostList posts={posts} />}
+      {isLoading ? <LoadingPostList /> : <PostList posts={posts} />}
     </div>
   );
 }
