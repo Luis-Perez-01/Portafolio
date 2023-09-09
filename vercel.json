@@ -1,0 +1,12 @@
+{
+    "rewrites": [
+        {
+            "destination": "/index.html",
+            "source": "/blog/(.*)"
+        },
+        {
+            "destination": "/404.html",
+            "source": "/(.*)"
+        }
+    ]
+}
