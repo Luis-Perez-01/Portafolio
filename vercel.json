@@ -2,7 +2,11 @@
     "rewrites": [
         {
             "destination": "/index.html",
-            "source": "/blog/(.*)"
+            "source": [
+                "/about",
+                "/projects",
+                "/blog/(.*)"
+            ]
         },
         {
             "destination": "/404.html",
