@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+        {
+            "destination": "/pages/Projects.tsx",
+            "source": "/projects"
+        }
+    ]
+}
