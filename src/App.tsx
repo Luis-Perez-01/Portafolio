@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "./context/ThemeContext";
 import { ModalContextProvider } from "./context/ModalContext";
@@ -20,26 +20,24 @@ function App() {
   return (
     <ThemeProvider>
       <UserContextProvider>
-        <BrowserRouter>
-          <ModalContextProvider>
-            <Navigation />
-            <Login />
-            <Register />
-            <Layout>
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/projects" element={<Projects />} />
-                <Route path="/about" element={<AboutMe />} />
-                <Route path="/blog" element={<Blog />} />
-                <Route path="/blog/:slug" element={<Post />} />
-                <Route path="/blog/create" element={<CreatePost />} />
-                <Route path="*" element={<NotFoundPage />} />
-              </Routes>
-              <Footer />
-              <Toaster />
-            </Layout>
-          </ModalContextProvider>
-        </BrowserRouter>
+        <ModalContextProvider>
+          <Navigation />
+          <Login />
+          <Register />
+          <Layout>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/about" element={<AboutMe />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:slug" element={<Post />} />
+              <Route path="/blog/create" element={<CreatePost />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+            <Footer />
+            <Toaster />
+          </Layout>
+        </ModalContextProvider>
       </UserContextProvider>
     </ThemeProvider>
   );
