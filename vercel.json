@@ -1,15 +1,15 @@
 {
     "redirects": [
         {
-            "destination": "/index.html",
+            "destination": "/blog",
             "source": "/blog/(.*)"
         },
         {
-            "destination": "/index.html",
+            "destination": "/projects",
             "source": "/projects"
         },
         {
-            "destination": "/index.html",
+            "destination": "/",
             "source": "/(.*)"
         }
     ]
