@@ -31,7 +31,7 @@ function App() {
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/about" element={<AboutMe />} />
                 <Route path="/blog" element={<Blog />} />
-                <Route path="/blog/:id" element={<Post />} />
+                <Route path="/blog/:slug" element={<Post />} />
                 <Route path="/blog/create" element={<CreatePost />} />
                 <Route path="*" element={<NotFoundPage />} />
               </Routes>
