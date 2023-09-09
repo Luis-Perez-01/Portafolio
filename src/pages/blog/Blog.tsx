@@ -1,23 +1,17 @@
 import { useContext, useEffect, useState } from "react";
-import api from "../../api";
 import PostList from "../../components/PostList";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
 import { ModalContext } from "../../context/ModalContext";
 import LoadingListPost from "../../components/LoadingPost";
+import PostsContext from "../../context/PostsContext";
 
 export default function Blog() {
-  const [posts, setPosts] = useState<any>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const { posts, isLoading } = useContext(PostsContext);
   const { userInfo } = useContext(UserContext);
   const { handleModalLogin } = useContext(ModalContext);
 
   useEffect(() => {
-    setIsLoading(true);
-    api.posts.getAll
-      .fetch()
-      .then((data) => setPosts(data))
-      .finally(() => setIsLoading(false));
     window.scrollTo(0, 0);
   }, []);
 

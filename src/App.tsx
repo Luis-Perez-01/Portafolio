@@ -15,30 +15,33 @@ import Register from "./pages/auth/Register";
 import { UserContextProvider } from "./context/UserContext";
 import Footer from "./components/Footer";
 import CreatePost from "./pages/blog/CreatePost";
+import { PostsProvider } from "./context/PostsContext";
 
 function App() {
   return (
     <ThemeProvider>
       <UserContextProvider>
         <ModalContextProvider>
-          <Navigation />
-          <Login />
-          <Register />
-          <Layout>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/about" element={<AboutMe />} />
-              <Route path="/blog">
-                <Route index element={<Blog />} />
-                <Route path=":slug" element={<Post />} />
-                <Route path="create" element={<CreatePost />} />
-              </Route>
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-            <Footer />
-            <Toaster />
-          </Layout>
+          <PostsProvider>
+            <Navigation />
+            <Login />
+            <Register />
+            <Layout>
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/projects" element={<Projects />} />
+                <Route path="/about" element={<AboutMe />} />
+                <Route path="/blog">
+                  <Route index element={<Blog />} />
+                  <Route path=":slug" element={<Post />} />
+                  <Route path="create" element={<CreatePost />} />
+                </Route>
+                <Route path="*" element={<NotFoundPage />} />
+              </Routes>
+              <Footer />
+              <Toaster />
+            </Layout>
+          </PostsProvider>
         </ModalContextProvider>
       </UserContextProvider>
     </ThemeProvider>
