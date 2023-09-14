@@ -6,6 +6,7 @@ import { toast } from "sonner";
 import api from "../api";
 import { ModalContext } from "../context/ModalContext";
 import { UserContext } from "../context/UserContext";
+import { Input, Button } from "@nextui-org/react";
 
 export default function LoginForm() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -17,6 +18,7 @@ export default function LoginForm() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({ resolver: zodResolver(loginSchema) });
 
@@ -35,6 +37,7 @@ export default function LoginForm() {
           email: response.email,
         });
         toast.success("Sesión iniciada correctamente");
+        reset();
         handleModalLogin();
       }
     } catch (error) {
@@ -48,40 +51,24 @@ export default function LoginForm() {
       onSubmit={handleSubmit(onSubmit)}
       className="flex flex-col relative space-y-2 mt-4"
     >
-      <label htmlFor="email" className={errors.email ? "text-red-500" : ""}>
-        Email
-      </label>
-      <input
+      <Input
         type="email"
         id="email"
+        label="Email"
+        variant="bordered"
         {...register("email")}
-        className={`border border-gray-300 dark:text-black dark:border-gray-700 rounded-lg px-2 py-1 ${
-          errors.email ? "border-red-500 dark:border-red-500 outline-none" : ""
-        }`}
+        errorMessage={errors.email?.message?.toString()}
       />
-      {errors.email && (
-        <span className="text-red-500">{errors.email.message?.toString()}</span>
-      )}
-      <label
-        htmlFor="password"
-        className={errors.password ? "text-red-500" : ""}
-      >
-        Password
-      </label>
-      <input
+
+      <Input
         type="password"
         id="password"
         autoComplete="on"
+        label="Password"
+        variant="bordered"
         {...register("password")}
-        className={`border border-gray-300 dark:text-black dark:border-gray-700 rounded-lg px-2 py-1 ${
-          errors.email ? "border-red-500 dark:border-red-500 outline-none" : ""
-        }`}
+        errorMessage={errors.password?.message?.toString()}
       />
-      {errors.password && (
-        <span className="text-red-500">
-          {errors.password.message?.toString()}
-        </span>
-      )}
       <p className="text-sm pb-8">
         Aún no te has registrado?
         <button
@@ -92,12 +79,13 @@ export default function LoginForm() {
           Accede aquí
         </button>
       </p>
-      <button
+      <Button
         type="submit"
         className="rounded-lg text-white text-sm font-semibold bg-blue-700 hover:bg-blue-600 hover:scale-[1.01] tranform ease-in-out duration-75 px-3 py-2 drop-shadow"
+        isLoading={isLoading}
       >
         {isLoading ? "Cargando..." : "Iniciar"}
-      </button>
+      </Button>
     </form>
   );
 }
