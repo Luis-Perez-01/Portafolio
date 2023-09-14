@@ -4,15 +4,7 @@ import api from "../../api";
 import { ChevronLeft } from "lucide-react";
 import { Post } from "../../interfaces/Post.interface";
 import LoadingPost from "../../components/LoadingPost";
-
-const formatDate = (dateString: Date) => {
-  const date = new Date(dateString);
-  return date.toLocaleDateString("es-ES", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-};
+import { formatDate } from "../../utils/dateUtils";
 
 export default function Post() {
   const { slug } = useParams();
