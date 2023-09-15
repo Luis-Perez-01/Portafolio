@@ -115,7 +115,7 @@ export default function PostFormCreate() {
       {errors.file && (
         <span className="text-red-500">{errors.file.message?.toString()}</span>
       )}
-      <label htmlFor="content">Content</label>
+      <label htmlFor="content">Contenido</label>
 
       <RichTextEditor editor={editor} onKeyUp={handleChange}>
         <RichTextEditor.Toolbar sticky stickyOffset={60}>

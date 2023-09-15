@@ -16,17 +16,21 @@ export default function PostList({ posts }: { posts: Post[] }) {
   return (
     <div className="grid md:grid-cols-2 mx-10 gap-10">
       {orderPosts.map((post) => (
-        <Link to={`/blog/${post.slug}`} key={post._id}>
-          <div className="flex flex-col min-h-full rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-900 group">
-            <figure className="overflow-hidden">
-              <img
-                className="aspect-video object-center transform ease-in-out group-hover:scale-[1.05] duration-500"
-                src={post.file}
-                alt={post.title}
-              />
-            </figure>
+        <Link
+          className="first:md:col-span-2 first:md:flex-row first:col-span-1 first:flex-col flex flex-col min-h-[13rem] rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-900 group max-h-[30rem]"
+          to={`/blog/${post.slug}`}
+          key={post._id}
+        >
+          <figure className="overflow-hidden h-full">
+            <img
+              className="aspect-video bg-center bg-cover transform ease-in-out group-hover:scale-[1.05] duration-500"
+              src={post.file}
+              alt={post.title}
+            />
+          </figure>
 
-            <div className="flex-1 space-y-2 px-6 pt-6 pb-2.5">
+          <div className="flex flex-col h-full">
+            <div className="flex-1 space-y-2 pt-6 pb-10 px-6 h-full">
               <h1 className="uppercase font-semibold line-clamp-2">
                 {post.title}
               </h1>
@@ -34,11 +38,9 @@ export default function PostList({ posts }: { posts: Post[] }) {
                 {post.description}
               </p>
             </div>
-            <div className="flex-initial pb-6 px-6">
-              <span className="text-sm font-semibold text-neutral-700 dark:text-neutral-300">
-                {formatDate(post.createdAt)}
-              </span>
-            </div>
+            <span className="flex-initial text-sm font-semibold text-neutral-700 dark:text-neutral-300 px-6 pb-6">
+              {formatDate(post.createdAt)}
+            </span>
           </div>
         </Link>
       ))}
