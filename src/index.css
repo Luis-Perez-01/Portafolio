@@ -36,7 +36,3 @@ li > p {
 p > a {
   @apply border-b border-blue-700 hover:text-blue-700;
 }
-
-p {
-  @apply dark:text-gray-200;
-}
