@@ -17,6 +17,7 @@ import Footer from "./components/Footer";
 import CreatePost from "./pages/blog/CreatePost";
 import { PostsProvider } from "./context/PostsContext";
 import Dashboard from "./pages/dashboard/Dashboard";
+import VerifyAdmin from "./middleware/VerifyAdmin.middleware";
 
 function App() {
   return (
@@ -35,9 +36,23 @@ function App() {
                 <Route path="/blog">
                   <Route index element={<Blog />} />
                   <Route path=":slug" element={<Post />} />
-                  <Route path="create" element={<CreatePost />} />
+                  <Route
+                    path="create"
+                    element={
+                      <VerifyAdmin>
+                        <CreatePost />
+                      </VerifyAdmin>
+                    }
+                  />
                 </Route>
-                <Route path="/dashboard" element={<Dashboard />} />
+                <Route
+                  path="/dashboard"
+                  element={
+                    <VerifyAdmin>
+                      <Dashboard />
+                    </VerifyAdmin>
+                  }
+                />
                 <Route path="*" element={<NotFoundPage />} />
               </Routes>
               <Footer />
