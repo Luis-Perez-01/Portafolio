@@ -17,7 +17,6 @@ import Footer from "./components/Footer";
 import CreatePost from "./pages/blog/CreatePost";
 import { PostsProvider } from "./context/PostsContext";
 import Dashboard from "./pages/dashboard/Dashboard";
-import VerifyAdmin from "./middleware/VerifyAdmin.middleware";
 
 function App() {
   return (
