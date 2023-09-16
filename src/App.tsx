@@ -36,23 +36,10 @@ function App() {
                 <Route path="/blog">
                   <Route index element={<Blog />} />
                   <Route path=":slug" element={<Post />} />
-                  <Route
-                    path="create"
-                    element={
-                      <VerifyAdmin>
-                        <CreatePost />
-                      </VerifyAdmin>
-                    }
-                  />
+
+                  <Route path="create" element={<CreatePost />} />
                 </Route>
-                <Route
-                  path="/dashboard"
-                  element={
-                    <VerifyAdmin>
-                      <Dashboard />
-                    </VerifyAdmin>
-                  }
-                />
+                <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="*" element={<NotFoundPage />} />
               </Routes>
               <Footer />
