@@ -37,7 +37,6 @@ export default function LoginForm() {
           email: response.email,
           role: response.role,
         });
-        console.log(response);
         toast.success("Sesión iniciada correctamente");
         reset();
         handleModalLogin();
