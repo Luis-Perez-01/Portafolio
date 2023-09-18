@@ -8,31 +8,3 @@
     @apply bg-white dark:bg-gray-950 dark:text-white font-hind;
   }
 }
-
-h2 {
-  @apply text-2xl font-bold my-2;
-}
-
-h3 {
-  @apply text-xl font-bold my-2;
-}
-
-h4 {
-  @apply text-lg font-bold my-2;
-}
-
-h5 {
-  @apply text-base font-bold my-2;
-}
-
-ol {
-  @apply list-decimal list-outside pl-8;
-}
-
-li > p {
-  @apply mb-2;
-}
-
-p > a {
-  @apply border-b border-blue-700 hover:text-blue-700;
-}

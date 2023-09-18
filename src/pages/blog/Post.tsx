@@ -31,7 +31,7 @@ export default function Post() {
         </Link>
         <span>{formatDate(post.createdAt)}</span>
       </div>
-      <article className="max-w-screen-lg mx-10 md:mx-auto">
+      <article className="max-w-screen-lg prose prose-2xl dark:prose-invert mx-10 md:mx-auto">
         <section className="space-y-8">
           <h1 className="text-4xl font-semibold">{post.title}</h1>
           <p className="text-2xl">{post.description}</p>

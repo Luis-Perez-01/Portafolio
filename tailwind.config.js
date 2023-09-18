@@ -15,5 +15,9 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animated"), nextui()],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("tailwindcss-animated"),
+    nextui(),
+  ],
 };
