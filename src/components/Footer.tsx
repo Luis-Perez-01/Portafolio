@@ -4,7 +4,7 @@ export default function Footer() {
       <div className=" text-center">
         <p>&lt;Luis Dev/&gt;</p>
         <p>
-          Contáctame en
+          Contáctame en{" "}
           <a
             className="text-blue-700 hover:underline"
             href="mailto:LuisM1P3@hotmail.com"
