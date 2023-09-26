@@ -1,16 +1,14 @@
-import { useContext } from "react";
-import { UserContext } from "../context/UserContext";
-import { useNavigate } from "react-router-dom";
+import jwtDecode from "jwt-decode";
 
 export default function VerifyAdmin({ children }: { children: any }) {
-  const { userInfo } = useContext(UserContext);
-  const navigate = useNavigate();
+  const token = localStorage.getItem("token");
 
-  if (userInfo === null) {
-    navigate("/");
-  } else {
-    if (userInfo.id === "64f7f14111e13ad18a78c3a3") {
-      return <>{children}</>;
+  if (token) {
+    const decodedToken: any = jwtDecode(token);
+    if (decodedToken.role === "admin") {
+      return children;
     }
+  } else {
+    return window.location.replace("/");
   }
 }

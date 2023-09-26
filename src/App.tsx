@@ -17,6 +17,9 @@ import Footer from "./components/Footer";
 import CreatePost from "./pages/blog/CreatePost";
 import { PostsProvider } from "./context/PostsContext";
 import Dashboard from "./pages/dashboard/Dashboard";
+import VerifyAdmin from "./middleware/VerifyAdmin.middleware";
+import ProjectsDsh from "./pages/dashboard/Projects";
+import TecnologiesDsh from "./pages/dashboard/Tecnologies";
 
 function App() {
   return (
@@ -37,7 +40,17 @@ function App() {
                   <Route path=":slug" element={<Post />} />
                   <Route path="create" element={<CreatePost />} />
                 </Route>
-                <Route path="/dashboard" element={<Dashboard />} />
+                <Route
+                  path="/dashboard"
+                  element={
+                    <VerifyAdmin>
+                      <Dashboard />
+                    </VerifyAdmin>
+                  }
+                >
+                  <Route path="projects" element={<ProjectsDsh />} />
+                  <Route path="tecnologies" element={<TecnologiesDsh />} />
+                </Route>
                 <Route path="*" element={<NotFoundPage />} />
               </Routes>
               <Footer />

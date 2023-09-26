@@ -1,7 +1,17 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import api from "../api";
+
+interface Tecnology {
+  _id: number;
+  name: string;
+  image: string;
+}
 
 export default function AboutMe() {
+  const [tecnologies, setTecnologies] = useState<Tecnology[]>([]);
+
   useEffect(() => {
+    api.tecnologies.getAll.fetch().then((data) => setTecnologies(data));
     window.scrollTo(0, 0);
   }, []);
 
@@ -25,46 +35,22 @@ export default function AboutMe() {
         </figure>
       </section>
 
-      <section className="grid grid-cols-2 md:grid-cols-4 p-6 w-full bg-gray-100 dark:bg-gray-900 rounded-lg animate-fade-down">
-        <figure className="flex flex-col w-full">
-          <img className="w-20 h-20 mx-auto" src="/assets/html-5.png" alt="" />
-          <p className="text-center text-sm font-semibold">HTML</p>
-        </figure>
-
-        <figure className="flex flex-col w-full">
-          <img className="w-20 h-20 mx-auto" src="/assets/css-3.png" alt="" />
-          <p className="text-center text-sm font-semibold">CSS</p>
-        </figure>
-
-        <figure className="flex flex-col w-full">
-          <img className="w-18 h-20 mx-auto" src="/assets/js.png" alt="" />
-          <p className="text-center text-sm font-semibold">Javascript</p>
-        </figure>
-
-        <figure className="flex flex-col w-full">
-          <img className="w-20 h-20 mx-auto" src="/assets/Git.png" alt="" />
-          <p className="text-center text-sm font-semibold">Git</p>
-        </figure>
-
-        <figure className="flex flex-col w-full">
-          <img className="w-20 h-20 mx-auto" src="/assets/php.png" alt="" />
-          <p className="text-center text-sm font-semibold">PHP</p>
-        </figure>
-
-        <figure className="flex flex-col w-full">
-          <img className="w-20 h-20 mx-auto" src="/assets/mysql.png" alt="" />
-          <p className="text-center text-sm font-semibold">MySQL</p>
-        </figure>
-
-        <figure className="flex flex-col w-full">
-          <img className="w-28 h-20 mx-auto" src="/assets/node js.png" alt="" />
-          <p className="text-center text-sm font-semibold">Node JS</p>
-        </figure>
-
-        <figure className="flex flex-col w-full">
-          <img className="w-20 h-20 mx-auto" src="/assets/mongodb.png" alt="" />
-          <p className="text-center text-sm font-semibold">Mongo DB</p>
-        </figure>
+      <section className="grid grid-cols-2 md:grid-cols-4 p-6 w-full bg-gray-100 dark:bg-gray-900 rounded-lg animate-fade-down gap-6">
+        {tecnologies.map((item, index) => (
+          <figure
+            key={item._id}
+            className={`flex flex-col w-full ${
+              index >= tecnologies.length - 2 ? "md:col-span-2" : ""
+            }`}
+          >
+            <img
+              className="w-12 h-12 mx-auto"
+              src={item.image}
+              alt={item.name}
+            />
+            <p className="text-center text-sm font-semibold">{item.name}</p>
+          </figure>
+        ))}
       </section>
     </div>
   );

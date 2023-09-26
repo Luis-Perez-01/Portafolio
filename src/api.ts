@@ -77,6 +77,34 @@ const api = {
       },
     },
   },
+  projects: {
+    getAll: {
+      fetch: async () => {
+        const response = await fetch(
+          "https://portafolio-backend-ihwm-dev.fl0.io/api/projects",
+          {
+            method: "GET",
+            credentials: "include",
+          }
+        ).then((res) => res.json());
+        return response;
+      },
+    },
+  },
+  tecnologies: {
+    getAll: {
+      fetch: async () => {
+        const response = await fetch(
+          "https://portafolio-backend-ihwm-dev.fl0.io/api/technology",
+          {
+            method: "GET",
+            credentials: "include",
+          }
+        ).then((res) => res.json());
+        return response;
+      },
+    },
+  },
 };
 
 export default api;
