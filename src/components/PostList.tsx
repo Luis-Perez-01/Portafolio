@@ -17,7 +17,7 @@ export default function PostList({ posts }: { posts: Post[] }) {
     <div className="grid md:grid-cols-2 mx-10 gap-10">
       {orderPosts.map((post) => (
         <Link
-          className="first:md:col-span-2 first:md:flex-row first:col-span-1 first:flex-col flex flex-col min-h-[13rem] rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-900 group max-h-[30rem]"
+          className="first:md:col-span-2 first:md:flex-row first:col-span-1 first:flex-col flex flex-col min-h-[13rem] rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-900/50 group max-h-[30rem]"
           to={`/blog/${post.slug}`}
           key={post._id}
         >

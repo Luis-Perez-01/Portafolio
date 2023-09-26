@@ -20,7 +20,7 @@ export default function AboutMe() {
       className="max-w-screen-lg space-y-10 w-full mx-auto p-6 pt-20 mb-10"
       id="aboutMe"
     >
-      <section className="flex flex-col md:flex-row justify-center items-center bg-gray-100 dark:bg-gray-900 rounded-lg animate-fade-up">
+      <section className="flex flex-col md:flex-row justify-center items-center bg-gray-100 dark:bg-gray-900/20 rounded-lg animate-fade-up">
         <article className="leading-8 p-6">
           <h1 className="text-2xl font-bold pb-3">Sobre mí</h1>
           <p>
@@ -38,7 +38,7 @@ export default function AboutMe() {
         </figure>
       </section>
 
-      <section className="grid grid-cols-2 md:grid-cols-4 p-6 w-full bg-gray-100 dark:bg-gray-900 rounded-lg animate-fade-down gap-6">
+      <section className="grid grid-cols-2 md:grid-cols-4 p-6 w-full bg-gray-100 dark:bg-gray-900/20 rounded-lg animate-fade-down gap-6">
         {tecnologies.map((item, index) => (
           <figure
             key={item._id}
@@ -47,7 +47,7 @@ export default function AboutMe() {
             }`}
           >
             <img
-              className="w-12 h-12 mx-auto"
+              className="w-12 h-12 drop-shadow-2xl mx-auto"
               src={item.image}
               alt={item.name}
             />

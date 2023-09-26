@@ -7,7 +7,7 @@ import AboutMe from "./AboutMe";
 export default function HomePage() {
   return (
     <>
-      <section className="flex flex-col md:flex-row justify-center items-center bg-gray-100 dark:bg-gray-950 animate-fade-up w-full md:mx-auto gap-8 py-24">
+      <section className="flex flex-col md:flex-row justify-center items-center bg-gray-100 dark:bg-gray-900/20 animate-fade-up w-full md:mx-auto gap-8 py-24">
         <div className="relative text-center leading-10 mx-10 md:mx-0 md:mr-10">
           <Lottie
             className="absolute left-0 right-0 -top-10 w-[60%] mx-auto -z-10"

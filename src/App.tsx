@@ -33,8 +33,6 @@ function App() {
             <Layout>
               <Routes>
                 <Route path="/" element={<HomePage />} />
-                <Route path="/projects" element={<Projects />} />
-                <Route path="/about" element={<AboutMe />} />
                 <Route path="/blog">
                   <Route index element={<Blog />} />
                   <Route path=":slug" element={<Post />} />

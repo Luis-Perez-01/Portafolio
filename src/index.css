@@ -8,6 +8,6 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-white dark:bg-gray-950 dark:text-white font-hind;
+    @apply bg-white dark:bg-[#202b42] dark:text-white font-hind;
   }
 }
