@@ -1,6 +1,6 @@
 import { BadgeCheck, Menu, Moon, Sun } from "lucide-react";
 import { useContext, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import ThemeContext from "../context/ThemeContext";
 import useMenu from "../hooks/ToggleMenuHook";
 import { ModalContext } from "../context/ModalContext";
