@@ -1,6 +1,6 @@
 import { BadgeCheck, Menu, Moon, Sun } from "lucide-react";
 import { useContext, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import ThemeContext from "../context/ThemeContext";
 import useMenu from "../hooks/ToggleMenuHook";
 import { ModalContext } from "../context/ModalContext";
@@ -15,6 +15,8 @@ export default function Navigation() {
   const { userInfo, setUserInfo } = useContext(UserContext);
 
   const { toogleMenu, handleClick } = useMenu();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     validateSession();
@@ -45,7 +47,13 @@ export default function Navigation() {
   return (
     <header className="dark:border-b dark:border-gray-800 drop-shadow-sm dark:text-white sticky bg-white/70 dark:bg-gray-900/90 backdrop-blur-md top-0 z-10">
       <nav className="flex flex-wrap justify-between items-center max-w-screen-lg mx-auto p-4">
-        <NavLink className="flex items-center " to="/">
+        <NavLink
+          onClick={() => {
+            window.scrollTo(0, 0);
+          }}
+          className="flex items-center "
+          to="/"
+        >
           <img src="/assets/me.jpg" className="w-10 h-10 rounded-full mr-2" />
           <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white hover:text-blue-700 dark:hover:text-blue-700">
             Luis Pérez
@@ -69,6 +77,9 @@ export default function Navigation() {
               <a
                 className="block py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 href="#projects"
+                onClick={() => {
+                  navigate("/");
+                }}
               >
                 Proyectos
               </a>
@@ -77,6 +88,9 @@ export default function Navigation() {
             <a
               className="block py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               href="#aboutMe"
+              onClick={() => {
+                navigate("/");
+              }}
             >
               Acerca de mí
             </a>
