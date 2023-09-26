@@ -16,7 +16,10 @@ export default function AboutMe() {
   }, []);
 
   return (
-    <div className="max-w-screen-lg space-y-10 w-full mx-auto p-6 my-10">
+    <div
+      className="max-w-screen-lg space-y-10 w-full mx-auto p-6 pt-20 mb-10"
+      id="aboutMe"
+    >
       <section className="flex flex-col md:flex-row justify-center items-center bg-gray-100 dark:bg-gray-900 rounded-lg animate-fade-up">
         <article className="leading-8 p-6">
           <h1 className="text-2xl font-bold pb-3">Sobre mí</h1>

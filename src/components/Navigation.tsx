@@ -1,6 +1,6 @@
 import { BadgeCheck, Menu, Moon, Sun } from "lucide-react";
 import { useContext, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import ThemeContext from "../context/ThemeContext";
 import useMenu from "../hooks/ToggleMenuHook";
 import { ModalContext } from "../context/ModalContext";
@@ -44,7 +44,7 @@ export default function Navigation() {
 
   return (
     <header className="dark:border-b dark:border-gray-800 drop-shadow-sm dark:text-white sticky bg-white/70 dark:bg-gray-900/90 backdrop-blur-md top-0 z-10">
-      <nav className="flex flex-wrap justify-between items-center max-w-screen-2xl mx-auto p-4">
+      <nav className="flex flex-wrap justify-between items-center max-w-screen-lg mx-auto p-4">
         <NavLink className="flex items-center " to="/">
           <img src="/assets/me.jpg" className="w-10 h-10 rounded-full mr-2" />
           <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white hover:text-blue-700 dark:hover:text-blue-700">
@@ -66,48 +66,20 @@ export default function Navigation() {
         >
           <ul className="w-fit m-auto font-medium items-center flex flex-col p-4 md:p-0 md:flex-row md:space-x-8 space-y-2 md:space-y-0">
             <li>
-              <NavLink
-                className={({ isActive, isPending }) =>
-                  isPending
-                    ? "block py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                    : isActive
-                    ? "border-b-2 border-blue-700"
-                    : ""
-                }
-                to="/"
-              >
-                Inicio
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive, isPending }) =>
-                  isPending
-                    ? "block py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                    : isActive
-                    ? "border-b-2 border-blue-700"
-                    : ""
-                }
-                to="/projects"
+              <a
+                className="block py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                href="#projects"
               >
                 Proyectos
-              </NavLink>
+              </a>
             </li>
 
-            <li>
-              <NavLink
-                className={({ isActive, isPending }) =>
-                  isPending
-                    ? "block py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                    : isActive
-                    ? "border-b-2 border-blue-700"
-                    : ""
-                }
-                to="about"
-              >
-                Acerca de mí
-              </NavLink>
-            </li>
+            <a
+              className="block py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              href="#aboutMe"
+            >
+              Acerca de mí
+            </a>
 
             <li>
               <NavLink
