@@ -6,8 +6,6 @@ import Navigation from "./components/Navigation";
 import Layout from "./components/Layout";
 import HomePage from "./pages/Home";
 import NotFoundPage from "./pages/NotFoundPage";
-import Projects from "./pages/Projects";
-import AboutMe from "./pages/AboutMe";
 import Post from "./pages/blog/Post";
 import Blog from "./pages/blog/Blog";
 import Login from "./pages/auth/Login";
