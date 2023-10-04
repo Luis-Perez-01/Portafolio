@@ -21,9 +21,9 @@ export default function PostList({ posts }: { posts: Post[] }) {
           to={`/blog/${post.slug}`}
           key={post._id}
         >
-          <figure className="overflow-hidden h-full">
+          <figure className="overflow-hidden h-full w-full">
             <img
-              className="aspect-video bg-center bg-cover transform ease-in-out group-hover:scale-[1.05] duration-500"
+              className="aspect-video object-cover object-center h-full w-full transform ease-in-out group-hover:scale-[1.05] duration-500"
               src={post.file}
               alt={post.title}
             />
