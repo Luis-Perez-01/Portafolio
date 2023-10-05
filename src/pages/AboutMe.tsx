@@ -45,6 +45,7 @@ export default function AboutMe() {
               className="w-12 h-12 drop-shadow-2xl mx-auto"
               src={item.image}
               alt={item.name}
+              loading="lazy"
             />
             <p className="text-center text-sm font-semibold">{item.name}</p>
           </figure>

@@ -26,6 +26,7 @@ export default function PostList({ posts }: { posts: Post[] }) {
               className="aspect-video object-cover object-center h-full w-full transform ease-in-out group-hover:scale-[1.05] duration-500"
               src={post.file}
               alt={post.title}
+              loading="lazy"
             />
           </figure>
 
