@@ -76,6 +76,22 @@ const api = {
         return response;
       },
     },
+    update: {
+      fetch: async (formData: any, id: string | undefined) => {
+        const response = await fetch(
+          `https://portafolio-backend-ihwm-dev.fl0.io/api/posts/${id}`,
+          {
+            method: "PUT",
+            credentials: "include",
+            body: formData,
+            headers: {
+              "x-access-token": localStorage.getItem("token")!,
+            },
+          }
+        ).then((res) => res.json());
+        return response;
+      },
+    },
   },
   projects: {
     getAll: {

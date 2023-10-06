@@ -10,4 +10,8 @@
   body {
     @apply bg-white dark:bg-[#202b42] dark:text-white font-hind;
   }
+
+  img {
+    @apply mx-auto;
+  }
 }

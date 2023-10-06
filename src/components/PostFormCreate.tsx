@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { postSchema } from "../schemas/post.schema";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import api from "../api";
 import { toast } from "sonner";
 import slug from "slug";
@@ -16,8 +16,9 @@ import Superscript from "@tiptap/extension-superscript";
 import SubScript from "@tiptap/extension-subscript";
 import Image from "@tiptap/extension-image";
 
-export default function PostFormCreate() {
+export default function PostFormCreate({ postData }: any) {
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [currentImage, setCurrentImage] = useState<string | null>(null);
   const {
     register,
     handleSubmit,
@@ -40,6 +41,19 @@ export default function PostFormCreate() {
     ],
   });
 
+  useEffect(() => {
+    if (postData) {
+      const { title, description, file, content } = postData;
+      setValue("title", title);
+      setValue("description", description);
+      setValue("file", file);
+      setCurrentImage(postData.file);
+      setValue("content", content);
+
+      editor?.chain().setContent(content).focus().run();
+    }
+  }, [postData, setValue, setCurrentImage, editor]);
+
   const handleChange = () => {
     const content = editor?.getHTML();
     setValue("content", content);
@@ -54,17 +68,33 @@ export default function PostFormCreate() {
       formData.append("title", title);
       formData.append("slug", slug(title));
       formData.append("description", description);
-      formData.append("file", file[0]);
+
+      if (file[0]) {
+        formData.append("file", file[0]);
+      } else {
+        formData.append("file", currentImage || "");
+      }
+
       formData.append("content", content);
 
-      const response = await api.posts.create.fetch(formData);
+      const response = postData
+        ? await api.posts.update.fetch(formData, postData._id)
+        : await api.posts.create.fetch(formData);
       if (response.message) {
         toast.error(response.message);
       } else {
-        toast.success("Post creado correctamente");
+        toast.success(
+          postData
+            ? "Post actualizado correctamente"
+            : "Post creado correctamente"
+        );
       }
     } catch (error: any) {
-      toast.error(`Error al crear el post: ${error.message}`);
+      toast.error(
+        `Error al ${postData ? "actualizar" : "crear"} el post: ${
+          error.message
+        }`
+      );
     }
     setIsLoading(false);
   };
@@ -111,7 +141,21 @@ export default function PostFormCreate() {
         className={`border border-gray-300 dark:border-gray-700 rounded-lg px-2 py-1 ${
           errors.file ? "border-red-500 dark:border-red-500 outline-none" : ""
         }`}
+        onChange={(e) => {
+          if (e.target.files && e.target.files.length > 0) {
+            setCurrentImage(URL.createObjectURL(e.target.files[0]));
+          }
+        }}
       />
+      {errors.file && (
+        <span className="text-red-500">{errors.file.message?.toString()}</span>
+      )}
+      {currentImage && (
+        <div className="mb-4">
+          <label>Imagen actual:</label>
+          <img src={currentImage} alt="Imagen actual" className="max-w-md" />
+        </div>
+      )}
       {errors.file && (
         <span className="text-red-500">{errors.file.message?.toString()}</span>
       )}
@@ -164,7 +208,7 @@ export default function PostFormCreate() {
         type="submit"
         className="rounded-lg text-white text-sm font-semibold bg-blue-700 hover:bg-blue-600 hover:scale-[1.01] tranform ease-in-out duration-75 px-3 py-2 drop-shadow"
       >
-        {isLoading ? "Cargando..." : "Crear"}
+        {isLoading ? "Cargando..." : postData ? "Editar" : "Crear"}
       </button>
     </form>
   );

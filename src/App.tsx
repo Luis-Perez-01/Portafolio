@@ -18,6 +18,7 @@ import Dashboard from "./pages/dashboard/Dashboard";
 import VerifyAdmin from "./middleware/VerifyAdmin.middleware";
 import ProjectsDsh from "./pages/dashboard/Projects";
 import TecnologiesDsh from "./pages/dashboard/Tecnologies";
+import EditPost from "./pages/blog/EditPost";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
                   <Route index element={<Blog />} />
                   <Route path=":slug" element={<Post />} />
                   <Route path="create" element={<CreatePost />} />
+                  <Route path="edit/:slug" element={<EditPost />} />
                 </Route>
                 <Route
                   path="/dashboard"
