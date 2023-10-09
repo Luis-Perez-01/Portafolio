@@ -15,10 +15,14 @@ import TextAlign from "@tiptap/extension-text-align";
 import Superscript from "@tiptap/extension-superscript";
 import SubScript from "@tiptap/extension-subscript";
 import Image from "@tiptap/extension-image";
+import { Button, Input } from "@nextui-org/react";
+import { Upload } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function PostFormCreate({ postData }: any) {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [currentImage, setCurrentImage] = useState<string | null>(null);
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -88,6 +92,7 @@ export default function PostFormCreate({ postData }: any) {
             ? "Post actualizado correctamente"
             : "Post creado correctamente"
         );
+        navigate(`/blog/${response.slug}`);
       }
     } catch (error: any) {
       toast.error(
@@ -106,63 +111,54 @@ export default function PostFormCreate({ postData }: any) {
       encType="multipart/form-data"
     >
       <label htmlFor="title">Título</label>
-      <input
+      <Input
         type="text"
         id="title"
+        variant="bordered"
         {...register("title")}
-        className={`border border-gray-300 dark:text-black dark:border-gray-700 rounded-lg px-2 py-1 ${
-          errors.title ? "border-red-500 dark:border-red-500 outline-none" : ""
-        }`}
+        errorMessage={errors.title?.message?.toString()}
+        isRequired
       />
-      {errors.title && (
-        <span className="text-red-500">{errors.title.message?.toString()}</span>
-      )}
       <label htmlFor="description">Descripción</label>
-      <input
+      <Input
         type="text"
         id="description"
+        variant="bordered"
         {...register("description")}
-        className={`border border-gray-300 dark:text-black dark:border-gray-700 rounded-lg px-2 py-1 ${
-          errors.description
-            ? "border-red-500 dark:border-red-500 outline-none"
-            : ""
-        }`}
+        errorMessage={errors.description?.message?.toString()}
+        isRequired
       />
-      {errors.description && (
-        <span className="text-red-500">
-          {errors.description.message?.toString()}
-        </span>
-      )}
-      <label htmlFor="file">Imagen</label>
-      <input
-        {...register("file")}
-        type="file"
-        id="file"
-        className={`border border-gray-300 dark:border-gray-700 rounded-lg px-2 py-1 ${
-          errors.file ? "border-red-500 dark:border-red-500 outline-none" : ""
-        }`}
-        onChange={(e) => {
-          if (e.target.files && e.target.files.length > 0) {
-            setCurrentImage(URL.createObjectURL(e.target.files[0]));
-          }
-        }}
-      />
-      {errors.file && (
-        <span className="text-red-500">{errors.file.message?.toString()}</span>
-      )}
+      <label
+        htmlFor="file"
+        className="border-2 border-dashed dark:border-neutral-600 rounded-lg flex flex-col justify-center items-center min-h-unit-24 drop-shadow-md hover:border-neutral-400 dark:hover:border-neutral-500 transition-opacity ease-in-out duration-75 cursor-pointer"
+      >
+        <Upload />
+        Subir imagen de portada
+        <Input
+          {...register("file")}
+          type="file"
+          id="file"
+          className="hidden"
+          errorMessage={errors.file?.message?.toString()}
+          onChange={(e) => {
+            if (e.target.files && e.target.files.length > 0) {
+              setCurrentImage(URL.createObjectURL(e.target.files[0]));
+            }
+          }}
+        />
+      </label>
+
       {currentImage && (
         <div className="mb-4">
           <label>Imagen actual:</label>
           <img src={currentImage} alt="Imagen actual" className="max-w-md" />
         </div>
       )}
-      {errors.file && (
-        <span className="text-red-500">{errors.file.message?.toString()}</span>
-      )}
+
       <label htmlFor="content">Contenido</label>
 
       <RichTextEditor editor={editor} onKeyUp={handleChange}>
-        <RichTextEditor.Toolbar sticky stickyOffset={60}>
+        <RichTextEditor.Toolbar sticky className="py-4" stickyOffset={60}>
           <RichTextEditor.ControlsGroup>
             <RichTextEditor.Bold />
             <RichTextEditor.Italic />
@@ -204,12 +200,13 @@ export default function PostFormCreate({ postData }: any) {
 
         <RichTextEditor.Content />
       </RichTextEditor>
-      <button
+      <Button
         type="submit"
         className="rounded-lg text-white text-sm font-semibold bg-blue-700 hover:bg-blue-600 hover:scale-[1.01] tranform ease-in-out duration-75 px-3 py-2 drop-shadow"
+        isLoading={isLoading}
       >
         {isLoading ? "Cargando..." : postData ? "Editar" : "Crear"}
-      </button>
+      </Button>
     </form>
   );
 }
