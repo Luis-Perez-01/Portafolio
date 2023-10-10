@@ -76,7 +76,6 @@ export default function Navigation() {
       <NavbarContent className="hidden sm:flex gap-4" justify="end">
         <NavbarItem>
           <Link
-            className="block py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white dark:hover:text-blue-500 dark:hover:bg-transparent"
             href="#projects"
             onClick={() => {
               handleClick();
@@ -88,7 +87,6 @@ export default function Navigation() {
         </NavbarItem>
         <NavbarItem>
           <Link
-            className="block py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white dark:hover:text-blue-500 dark:hover:bg-transparent"
             href="#aboutMe"
             onClick={() => {
               handleClick();
@@ -100,7 +98,6 @@ export default function Navigation() {
         </NavbarItem>
         <NavbarItem>
           <NavLink
-            className="block py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white dark:hover:text-blue-500 dark:hover:bg-transparent"
             to="blog"
             onClick={() => {
               handleClick();
@@ -152,7 +149,6 @@ export default function Navigation() {
       <NavbarMenu>
         <NavbarItem>
           <Link
-            className="block py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white dark:hover:text-blue-500 dark:hover:bg-transparent"
             href="#projects"
             onClick={() => {
               handleClick();
@@ -164,7 +160,6 @@ export default function Navigation() {
         </NavbarItem>
         <NavbarItem>
           <Link
-            className="block py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white dark:hover:text-blue-500 dark:hover:bg-transparent"
             href="#aboutMe"
             onClick={() => {
               handleClick();
@@ -176,7 +171,6 @@ export default function Navigation() {
         </NavbarItem>
         <NavbarItem>
           <NavLink
-            className="block py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white dark:hover:text-blue-500 dark:hover:bg-transparent"
             to="blog"
             onClick={() => {
               handleClick();
