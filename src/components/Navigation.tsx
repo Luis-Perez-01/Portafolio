@@ -76,6 +76,7 @@ export default function Navigation() {
       <NavbarContent className="hidden sm:flex gap-4" justify="end">
         <NavbarItem>
           <Link
+            color="foreground"
             href="#projects"
             onClick={() => {
               handleClick();
@@ -87,6 +88,7 @@ export default function Navigation() {
         </NavbarItem>
         <NavbarItem>
           <Link
+            color="foreground"
             href="#aboutMe"
             onClick={() => {
               handleClick();
