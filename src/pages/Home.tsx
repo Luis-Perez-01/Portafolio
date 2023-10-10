@@ -3,6 +3,7 @@ import Lottie from "lottie-react";
 import dataLottie from "../assets/bg-lottie.json";
 import Projects from "./Projects";
 import AboutMe from "./AboutMe";
+import { Button } from "@nextui-org/react";
 
 export default function HomePage() {
   return (
@@ -31,13 +32,14 @@ export default function HomePage() {
             >
               <Linkedin />
             </a>
-            <a
+            <Button
               className="rounded-lg text-white text-sm font-semibold bg-blue-700 hover:bg-blue-600 hover:scale-105 px-3 py-2 drop-shadow"
+              as={"a"}
               href="assets/C.V. Luis Miguel Pérez Padrón.pdf"
               download={"C.V. Luis Miguel Pérez Padrón.pdf"}
             >
               Descargar CV
-            </a>
+            </Button>
             <a
               className="rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-700 hover:ring-2 hover:scale-105 px-3 py-2 drop-shadow"
               href="https://github.com/Luis-Perez-01"

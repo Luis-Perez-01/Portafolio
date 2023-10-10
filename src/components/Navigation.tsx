@@ -112,7 +112,11 @@ export default function Navigation() {
         {userInfo ? (
           <Button onClick={destroySession}>Cerrar</Button>
         ) : (
-          <Button color="primary" onClick={handleModalLogin}>
+          <Button
+            className="hover:scale-[1.01] tranform ease-in-out duration-75 drop-shadow"
+            color="primary"
+            onClick={handleModalLogin}
+          >
             Iniciar
           </Button>
         )}
