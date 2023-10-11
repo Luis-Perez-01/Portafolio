@@ -12,7 +12,7 @@ export default function Studies() {
         </p>
       </Timeline.Item>
       <Timeline.Item
-        title="Universidad Tecnológica de la Salamanca"
+        title="Universidad Tecnológica de Salamanca"
         className="dark:text-white"
       >
         <p className="text-gray-500 dark:text-gray-400">
@@ -21,7 +21,7 @@ export default function Studies() {
         </p>
       </Timeline.Item>
       <Timeline.Item
-        title="Universidad Tecnológica de la Salamanca"
+        title="Universidad Tecnológica de Salamanca"
         className="dark:text-white"
       >
         <p className="text-gray-500 dark:text-gray-400">

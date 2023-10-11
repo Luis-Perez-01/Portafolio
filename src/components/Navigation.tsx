@@ -89,7 +89,7 @@ export default function Navigation() {
         <NavbarItem>
           <Link
             color="foreground"
-            href="#aboutMe"
+            href="#about"
             onClick={() => {
               handleClick();
               navigate("/");
@@ -101,6 +101,7 @@ export default function Navigation() {
         <NavbarItem>
           <NavLink
             to="blog"
+            className={"hover:opacity-70 transform ease-in-out duration-300"}
             onClick={() => {
               handleClick();
               navigate("/");
@@ -155,6 +156,7 @@ export default function Navigation() {
       <NavbarMenu>
         <NavbarItem>
           <Link
+            color="foreground"
             href="#projects"
             onClick={() => {
               handleClick();
@@ -166,7 +168,8 @@ export default function Navigation() {
         </NavbarItem>
         <NavbarItem>
           <Link
-            href="#aboutMe"
+            color="foreground"
+            href="#about"
             onClick={() => {
               handleClick();
               navigate("/");
@@ -178,6 +181,7 @@ export default function Navigation() {
         <NavbarItem>
           <NavLink
             to="blog"
+            className={"hover:opacity-70 transform ease-in-out duration-300"}
             onClick={() => {
               handleClick();
               navigate("/");

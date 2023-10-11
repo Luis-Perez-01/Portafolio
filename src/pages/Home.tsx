@@ -4,6 +4,7 @@ import dataLottie from "../assets/bg-lottie.json";
 import Projects from "./Projects";
 import AboutMe from "./AboutMe";
 import { Button } from "@nextui-org/react";
+import Technologies from "../components/Technologies";
 
 export default function HomePage() {
   return (
@@ -60,6 +61,7 @@ export default function HomePage() {
       </section>
       <Projects />
       <AboutMe />
+      <Technologies />
     </>
   );
 }
