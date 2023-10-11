@@ -4,7 +4,7 @@ import { loginSchema } from "../schemas/auth.schema";
 import { useContext, useState } from "react";
 import { toast } from "sonner";
 import api from "../api";
-import { ModalContext, useModal } from "../context/ModalContext";
+import { useModal } from "../context/ModalContext";
 import { UserContext } from "../context/UserContext";
 import { Input, Button } from "@nextui-org/react";
 
