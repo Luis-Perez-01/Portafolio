@@ -11,8 +11,9 @@ export default function Login() {
       isOpen={isOpen}
       onOpenChange={onOpenChange}
       placement="center"
+      size="lg"
       classNames={{
-        base: "bg-gray-900",
+        base: "dark:bg-gray-900",
         backdrop: "backdrop-blur-md backdrop-opacity-100",
       }}
     >
