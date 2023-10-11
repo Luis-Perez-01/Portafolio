@@ -35,7 +35,7 @@ export default function Projects() {
 
   return (
     <article
-      className="max-w-screen-lg w-full animate-fade-down p-6 pt-10 mt-10 mx-auto"
+      className="max-w-screen-lg w-full animate-fade-down p-6 pt-8 mt-10 mx-auto"
       id="projects"
     >
       <h1 className="text-2xl font-bold pb-6">Mis proyectos</h1>

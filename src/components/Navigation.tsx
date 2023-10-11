@@ -3,7 +3,7 @@ import { useContext, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import ThemeContext from "../context/ThemeContext";
 import useMenu from "../hooks/ToggleMenuHook";
-import { ModalContext } from "../context/ModalContext";
+import { useModal } from "../context/ModalContext";
 import { UserContext } from "../context/UserContext";
 import jwt from "jwt-decode";
 import {
@@ -18,7 +18,7 @@ import {
 } from "@nextui-org/react";
 
 export default function Navigation() {
-  const { handleModalLogin } = useContext<any>(ModalContext);
+  const modal = useModal();
 
   const { userInfo, setUserInfo } = useContext(UserContext);
 
@@ -116,7 +116,7 @@ export default function Navigation() {
           <Button
             className="hover:scale-[1.01] tranform ease-in-out duration-75 drop-shadow"
             color="primary"
-            onClick={handleModalLogin}
+            onClick={modal.onOpen}
           >
             Iniciar
           </Button>
@@ -147,7 +147,11 @@ export default function Navigation() {
         {userInfo ? (
           <Button onClick={destroySession}>Cerrar</Button>
         ) : (
-          <Button color="primary" onClick={handleModalLogin}>
+          <Button
+            className="hover:scale-[1.01] tranform ease-in-out duration-75 drop-shadow"
+            color="primary"
+            onClick={modal.onOpen}
+          >
             Iniciar
           </Button>
         )}

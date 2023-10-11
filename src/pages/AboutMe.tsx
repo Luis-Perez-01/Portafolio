@@ -1,3 +1,4 @@
+import Faq from "../components/Faq";
 import Studies from "../components/Studies";
 
 export default function AboutMe() {
@@ -31,6 +32,7 @@ export default function AboutMe() {
           <Studies />
         </div>
       </section>
+      <Faq />
     </div>
   );
 }

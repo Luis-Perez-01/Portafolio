@@ -1,45 +1,16 @@
-import { createContext, useEffect, useState } from "react";
+import { useDisclosure } from "@nextui-org/react";
+import { createContext, useContext } from "react";
 
-export const ModalContext = createContext({
-  isLoginOpen: false,
-  isRegisterOpen: false,
-  handleModalLogin: () => {},
-  handleModalRegister: () => {},
-  handleRedirectLogin: () => {},
-  handleRedirectRegister: () => {},
-});
+export const ModalContext = createContext({} as any);
+
+export function useModal() {
+  return useContext(ModalContext);
+}
 
 export const ModalContextProvider = ({ children }: { children: any }) => {
-  const [isLoginOpen, setIsLoginOpen] = useState<boolean>(false);
-  const [isRegisterOpen, setIsRegisterOpen] = useState<boolean>(false);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    if (isLoginOpen || isRegisterOpen) {
-      document.body.classList.add("overflow-hidden");
-    } else {
-      document.body.classList.remove("overflow-hidden");
-    }
-  }, [isLoginOpen, isRegisterOpen]);
+  const modal = useDisclosure();
 
   return (
-    <ModalContext.Provider
-      value={{
-        isLoginOpen,
-        isRegisterOpen,
-        handleModalLogin: () => setIsLoginOpen(!isLoginOpen),
-        handleModalRegister: () => setIsRegisterOpen(!isRegisterOpen),
-        handleRedirectLogin: () => {
-          setIsLoginOpen(false);
-          setIsRegisterOpen(true);
-        },
-        handleRedirectRegister: () => {
-          setIsRegisterOpen(false);
-          setIsLoginOpen(true);
-        },
-      }}
-    >
-      {children}
-    </ModalContext.Provider>
+    <ModalContext.Provider value={modal}>{children}</ModalContext.Provider>
   );
 };
