@@ -1,6 +1,6 @@
 import { Github, Linkedin } from "lucide-react";
 import Lottie from "lottie-react";
-import dataLottie from "../assets/bg-lottie.json";
+import dataLottie from "../../public/assets/bg-lottie.json";
 import Projects from "./Projects";
 import AboutMe from "./AboutMe";
 import { Button } from "@nextui-org/react";
