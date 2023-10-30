@@ -134,12 +134,11 @@ export default function PostFormCreate({ postData }: any) {
       >
         <Upload />
         Subir imagen de portada
-        <Input
+        <input
           {...register("file")}
           type="file"
           id="file"
           className="hidden"
-          errorMessage={errors.file?.message?.toString()}
           onChange={(e) => {
             if (e.target.files && e.target.files.length > 0) {
               setCurrentImage(URL.createObjectURL(e.target.files[0]));
