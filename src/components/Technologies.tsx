@@ -20,10 +20,10 @@ export default function Technologies() {
         {tecnologies.map((item) => (
           <figure key={item._id} className="flex flex-col w-full">
             <img
+              loading="lazy"
               className="w-12 h-12 rounded-full drop-shadow-2xl mx-auto"
               src={item.image}
               alt={item.name}
-              loading="lazy"
             />
             <p className="text-center text-sm font-semibold">{item.name}</p>
           </figure>
