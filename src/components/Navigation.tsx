@@ -65,7 +65,10 @@ export default function Navigation() {
             className="flex items-center "
             to="/"
           >
-            <img src="/assets/me.jpg" className="w-10 h-10 rounded-full mr-2" />
+            <img
+              src="/assets/me.webp"
+              className="w-10 h-10 rounded-full mr-2"
+            />
             <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white hover:text-blue-700 dark:hover:text-blue-700">
               Luis Pérez
             </span>
