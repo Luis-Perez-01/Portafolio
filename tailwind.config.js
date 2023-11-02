@@ -11,7 +11,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        hind: ["Hind", "sans-serif"],
+        hind: ["Hanken Grotesk", "sans-serif"],
       },
     },
   },
