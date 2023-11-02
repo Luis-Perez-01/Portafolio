@@ -55,6 +55,7 @@ export default function HomePage() {
             <img
               className="max-w-[8rem] lg:max-w-[15rem] shadow transform hover:scale-105 duration-300"
               src="assets/me.webp"
+              alt="Luis Pérez"
             />
           </div>
         </div>

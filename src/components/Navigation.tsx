@@ -68,6 +68,7 @@ export default function Navigation() {
             <img
               src="/assets/me.webp"
               className="w-10 h-10 rounded-full mr-2"
+              alt="Luis Pérez"
             />
             <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white hover:text-blue-700 dark:hover:text-blue-700">
               Luis Pérez
