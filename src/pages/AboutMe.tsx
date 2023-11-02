@@ -21,7 +21,7 @@ export default function AboutMe() {
           </p>
         </article>
         <figure className="md:col-span-2">
-          <img className="h-28 mx-auto" src="/assets/Logo.png" alt="Logo" />
+          <img className="h-28 mx-auto" src="/assets/Logo.webp" alt="Logo" />
         </figure>
       </section>
       <section className="grid relative place-content-center bg-gray-100 dark:bg-gray-900/20 rounded-lg p-6">
