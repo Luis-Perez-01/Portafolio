@@ -1,7 +1,7 @@
 export default function LoadingPost() {
   return (
-    <div className="max-w-screen-lg min-w-screen-lg w-full my-10 px-2 lg:px-0 mx-auto">
-      <div className="animate-pulse">
+    <div className="max-w-4xl w-full my-10 px-2 lg:px-0 mx-auto">
+      <div className="animate-pulse mx-10">
         <div className="flex justify-between mb-10 md:mx-auto">
           <div className="w-16 h-4 bg-gray-300 dark:bg-gray-700"></div>
           <div className="w-36 h-4 bg-gray-300 dark:bg-gray-700"></div>

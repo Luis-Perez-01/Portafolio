@@ -26,8 +26,8 @@ export default function Post() {
   return isLoading ? (
     <LoadingPost />
   ) : (
-    <div className="my-10 mx-2 lg:mx-auto text-sm md:text-base">
-      <div className="max-w-screen-lg flex justify-between mb-10 md:mx-auto">
+    <div className="max-w-4xl my-10 mx-auto text-sm md:text-base">
+      <div className="flex justify-between mb-10 mx-10">
         <Link className="flex items-center" to={`/blog`}>
           <ChevronLeft /> Volver
         </Link>
@@ -43,7 +43,7 @@ export default function Post() {
         ) : null}
         <span>{formatDate(post.createdAt)}</span>
       </div>
-      <article className="max-w-screen-lg prose prose-2xl dark:prose-invert md:mx-auto">
+      <article className="prose prose-2xl dark:prose-invert mx-10">
         <section className="space-y-8">
           <h1 className="text-xl md:text-4xl font-semibold">{post.title}</h1>
           <p className="text-lg md:text-2xl">{post.description}</p>
