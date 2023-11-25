@@ -5,7 +5,7 @@ const api = {
     login: {
       fetch: async (email: string, password: string) => {
         const response = await fetch(
-          "https://portafolio-backend-ihwm-dev.fl0.io/api/auth/signin",
+          "https://portafolio-backend-dev-smag.4.us-1.fl0.io/api/auth/signin",
           {
             method: "POST",
             headers: {
@@ -21,7 +21,7 @@ const api = {
     register: {
       fetch: async (name: string, email: string, password: string) => {
         const response = await fetch(
-          "https://portafolio-backend-ihwm-dev.fl0.io/api/auth/signup",
+          "https://portafolio-backend-dev-smag.4.us-1.fl0.io/api/auth/signup",
           {
             method: "POST",
             headers: {
@@ -39,7 +39,7 @@ const api = {
     getAll: {
       fetch: async () => {
         const response = await fetch(
-          "https://portafolio-backend-ihwm-dev.fl0.io/api/posts",
+          "https://portafolio-backend-dev-smag.4.us-1.fl0.io/api/posts",
           {
             method: "GET",
             credentials: "include",
@@ -51,7 +51,7 @@ const api = {
     getBySlug: {
       fetch: async (slug: string | undefined) => {
         const response = await fetch(
-          `https://portafolio-backend-ihwm-dev.fl0.io/api/posts/${slug}`,
+          `https://portafolio-backend-dev-smag.4.us-1.fl0.io/api/posts/${slug}`,
           {
             method: "GET",
             credentials: "include",
@@ -63,7 +63,7 @@ const api = {
     create: {
       fetch: async (FormData: any) => {
         const response = await fetch(
-          "https://portafolio-backend-ihwm-dev.fl0.io/api/posts",
+          "https://portafolio-backend-dev-smag.4.us-1.fl0.io/api/posts",
           {
             method: "POST",
             credentials: "include",
@@ -79,7 +79,7 @@ const api = {
     update: {
       fetch: async (formData: any, id: string | undefined) => {
         const response = await fetch(
-          `https://portafolio-backend-ihwm-dev.fl0.io/api/posts/${id}`,
+          `https://portafolio-backend-dev-smag.4.us-1.fl0.io/api/posts/${id}`,
           {
             method: "PUT",
             credentials: "include",
@@ -97,7 +97,7 @@ const api = {
     getAll: {
       fetch: async () => {
         const response = await fetch(
-          "https://portafolio-backend-ihwm-dev.fl0.io/api/projects",
+          "https://portafolio-backend-dev-smag.4.us-1.fl0.io/api/projects",
           {
             method: "GET",
             credentials: "include",
@@ -111,7 +111,7 @@ const api = {
     getAll: {
       fetch: async () => {
         const response = await fetch(
-          "https://portafolio-backend-ihwm-dev.fl0.io/api/technology",
+          "https://portafolio-backend-dev-smag.4.us-1.fl0.io/api/technology",
           {
             method: "GET",
             credentials: "include",
