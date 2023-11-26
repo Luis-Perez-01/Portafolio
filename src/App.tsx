@@ -19,40 +19,37 @@ import ProjectsDsh from "./pages/dashboard/Projects";
 import TecnologiesDsh from "./pages/dashboard/Tecnologies";
 import EditPost from "./pages/blog/EditPost";
 import IsAdmin from "./middleware/isAdmin.middleware";
-import { Suspense } from "react";
 
 function App() {
   return (
     <ThemeProvider>
       <UserContextProvider>
         <ModalContextProvider>
-          <Suspense fallback={<div>Loading...</div>}>
-            <PostsProvider>
-              <Navigation />
-              <Login />
-              <Register />
-              <Layout>
-                <Routes>
-                  <Route path="/" element={<HomePage />} />
-                  <Route path="/blog">
-                    <Route index element={<Blog />} />
-                    <Route path=":slug" element={<Post />} />
-                    <Route path="create" element={<CreatePost />} />
-                    <Route path="edit/:slug" element={<EditPost />} />
+          <PostsProvider>
+            <Navigation />
+            <Login />
+            <Register />
+            <Layout>
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/blog">
+                  <Route index element={<Blog />} />
+                  <Route path=":slug" element={<Post />} />
+                  <Route path="create" element={<CreatePost />} />
+                  <Route path="edit/:slug" element={<EditPost />} />
+                </Route>
+                <Route element={<IsAdmin />}>
+                  <Route path="/dashboard" element={<Dashboard />}>
+                    <Route path="projects" element={<ProjectsDsh />} />
+                    <Route path="tecnologies" element={<TecnologiesDsh />} />
                   </Route>
-                  <Route element={<IsAdmin />}>
-                    <Route path="/dashboard" element={<Dashboard />}>
-                      <Route path="projects" element={<ProjectsDsh />} />
-                      <Route path="tecnologies" element={<TecnologiesDsh />} />
-                    </Route>
-                  </Route>
-                  <Route path="*" element={<NotFoundPage />} />
-                </Routes>
-                <Footer />
-                <Toaster />
-              </Layout>
-            </PostsProvider>
-          </Suspense>
+                </Route>
+                <Route path="*" element={<NotFoundPage />} />
+              </Routes>
+              <Footer />
+              <Toaster />
+            </Layout>
+          </PostsProvider>
         </ModalContextProvider>
       </UserContextProvider>
     </ThemeProvider>
