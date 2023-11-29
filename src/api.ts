@@ -61,13 +61,13 @@ const api = {
       },
     },
     create: {
-      fetch: async (FormData: any) => {
+      fetch: async (formData: any) => {
         const response = await fetch(
           "https://portafolio-backend-dev-smag.4.us-1.fl0.io/api/posts",
           {
             method: "POST",
             credentials: "include",
-            body: FormData,
+            body: formData,
             headers: {
               "x-access-token": localStorage.getItem("token")!,
             },

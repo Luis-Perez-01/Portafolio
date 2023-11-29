@@ -73,8 +73,8 @@ export default function PostFormCreate({ postData }: any) {
       formData.append("slug", slug(title));
       formData.append("description", description);
 
-      if (file[0]) {
-        formData.append("file", file[0]);
+      if (file) {
+        formData.append("file", file);
       } else {
         formData.append("file", currentImage || "");
       }
@@ -84,6 +84,7 @@ export default function PostFormCreate({ postData }: any) {
       const response = postData
         ? await api.posts.update.fetch(formData, postData._id)
         : await api.posts.create.fetch(formData);
+
       if (response.message) {
         toast.error(response.message);
       } else {
@@ -107,8 +108,8 @@ export default function PostFormCreate({ postData }: any) {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="grid max-w-screen-lg space-y-2 mx-auto p-6"
       encType="multipart/form-data"
+      className="grid max-w-screen-lg space-y-2 mx-auto p-6"
     >
       <label htmlFor="title">Título</label>
       <Input
@@ -135,13 +136,14 @@ export default function PostFormCreate({ postData }: any) {
         <Upload />
         Subir imagen de portada
         <input
-          {...register("file")}
           type="file"
           id="file"
+          {...register("file")}
           className="hidden"
           onChange={(e) => {
             if (e.target.files && e.target.files.length > 0) {
               setCurrentImage(URL.createObjectURL(e.target.files[0]));
+              setValue("file", e.target.files[0]);
             }
           }}
         />
