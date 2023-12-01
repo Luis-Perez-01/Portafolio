@@ -2,7 +2,7 @@ import { Timeline } from "@mantine/core";
 
 export default function Studies() {
   return (
-    <Timeline active={2} bulletSize={18} lineWidth={6}>
+    <Timeline active={2} bulletSize={18} lineWidth={6} className="pt-12">
       <Timeline.Item
         title="Bachillerato Cetis No. 62"
         className="dark:text-white"

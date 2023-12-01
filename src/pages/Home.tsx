@@ -1,9 +1,10 @@
 import { Github, Linkedin } from "lucide-react";
+import { Button } from "@nextui-org/react";
 import Lottie from "lottie-react";
 import dataLottie from "../../public/assets/bg-lottie.json";
 import Projects from "./Projects";
 import AboutMe from "./AboutMe";
-import { Button } from "@nextui-org/react";
+import Certificates from "./Certificates";
 import Technologies from "../components/Technologies";
 
 export default function HomePage() {
@@ -62,6 +63,7 @@ export default function HomePage() {
       </section>
       <Projects />
       <AboutMe />
+      <Certificates />
       <Technologies />
     </>
   );
